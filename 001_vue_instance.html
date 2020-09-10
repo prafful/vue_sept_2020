@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- development version, includes helpful console warnings -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Vue Instance</title>
+</head>
+<body>
+    <div id="vueapp">
+        <h1>{{ welcome('Good noon') }}</h1>
+        Hello from {{name}}!!!!
+        <br>
+        Location: {{location}}
+        <br>
+        Website: {{website}}
+        &nbsp;
+        <a v-bind:href="website">Visit Now</a>
+        <br>
+        Technology: <input type="text" v-bind:value="tech">
+        <br>
+        Some HTML: {{mytemplate}}
+        <br>
+        Correct way: <span v-html="mytemplate"></span>
+    </div>
+ 
+    <script src="01vue_instance.js"></script>
+</body>
+</html>
