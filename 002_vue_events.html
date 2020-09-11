@@ -5,16 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- development version, includes helpful console warnings -->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <link rel="stylesheet" href="02style.css">
     <title>Vue Instance</title>
 </head>
 <body>
     <div id="vueapp">
-      <p>Score: {{score}}</p>
+      <p>Score (Vue Events): {{score}}</p>
       <br>
       <br>
-      <button v-on:click="score++" >Add</button>
+      <button v-on:click.once="increment(1)" >Add Only Once</button>
       &nbsp;
       <button  v-on:click="decrement(1)" >Minus</button>
+      <hr>
+      <button v-on:dblclick.alt="incrementTwo(1)" >Add on Dbl Click + Alt</button>
+      &nbsp;
+      <button  v-on:dblclick="decrementTwo(1)" >Minus on Dbl Click</button>
+      <hr>
+      Name: <input v-on:keyup="getName" type="text" v-model="name"> {{ name }}
+      <br>
+      <br>
+      <div id="canvas" v-on:mousemove.ctrl="capturePosition">
+        Get mouse location (mouse move  + ctrl key)!!!!
+        <br>
+        {{xpos}}, {{ypos}}
+       
+        
+      </div> 
+      <br>
+      <a  v-on:click.prevent="doSomething" href="https://vuejs.org/v2/guide/events.html">Vue.JS Events</a>
     </div>
  
     <script src="02vue_events.js"></script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="vueappone">
+        <h4>{{message}}</h4>
+      <ol>
+          <li v-for="friend in friends"> {{friend}}  </li>
+      </ol>
+      <ul>
+        <li v-for="(friend, index) in friends"> {{ index }} {{friend}}  </li>
+     </ul>
+     <ul>
+        <li v-for="(fd, index) in details"> {{ index }} {{fd.name}} from  {{fd.location}}  </li>
+     </ul>
+     <table border="1">
+         <thead>
+            <tr>
+                <th>Index</th>
+                <th>Name</th>
+                <th>Location</th>
+                <th>Action</th>
+            </tr>
+
+         </thead>
+         <tbody>
+            <tr v-for="(fd, index) in details">
+                <td>{{index}}</td>
+                <td> {{fd.name}} </td>
+                <td> {{fd.location}} </td>
+                <td>
+                    <button v-on:click="getFriend(index)">Edit</button>
+                </td>
+            </tr>
+         </tbody>
+     </table>
+    </div>
+<hr>
+    <div id="vueapptwo">
+        Message: {{message}}
+        <br>
+        <button v-on:click="changeMessage">Change Message</button>
+    </div>
+    <script src="04vue_loops.js"></script>
+</body>
+</html>

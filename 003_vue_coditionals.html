@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="vueapp">
+        <button v-on:click="success = !success">Display Success {{success }}</button>
+        &nbsp;
+        <button v-on:click="error = !error">Display Error {{error}}</button>
+        <br><br>
+        <div v-if="success">Success Message</div>
+        <div v-if="error">Error Message</div>
+        <br><br>
+        Show Message:
+        <div v-show="success">Welcome to conditionals!!!!</div>
+    </div>
+    <script src="03vue_conditionals.js"></script>
+</body>
+</html>
